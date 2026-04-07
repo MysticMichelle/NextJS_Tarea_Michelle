@@ -1,0 +1,196 @@
+==============================
+RESPUESTAS NEXT.JS
+==============================
+
+1. ¿Qué es Next.js y por qué es el framework de React más popular?
+
+Next.js es un framework basado en React que permite construir aplicaciones web modernas de forma rápida y optimizada.
+Se considera el más popular porque incluye muchas funcionalidades listas para usar como:
+- Enrutamiento automático
+- Renderizado del lado del servidor (SSR)
+- React Server Components
+- Optimización de imágenes
+- Manejo de datos (fetching)
+
+En pocas palabras:
+“Te da todo lo necesario para hacer apps completas sin configurar todo desde cero”
+
+
+2. Comando para inicializar un proyecto con la última versión:
+
+npx create-next-app@latest
+
+
+3. Comando para levantar el entorno y puerto por defecto:
+
+npm run dev
+
+Se ejecuta por defecto en:
+http://localhost:3000
+
+
+4. ¿Qué hace npm run build?
+
+Crea una versión optimizada del proyecto lista para producción.
+Minifica el código y mejora el rendimiento.
+
+
+5. Carpetas public y app:
+
+public:
+Contiene archivos estáticos como imágenes, videos o audios.
+Se acceden directamente desde la URL.
+
+app:
+Es la carpeta principal de la aplicación.
+Aquí se definen las rutas mediante archivos como page.tsx.
+La estructura de carpetas define el enrutamiento.
+
+
+6. ¿Qué es un CSS Module?
+
+Es una forma de escribir CSS donde los estilos están aislados por componente.
+
+Uso:
+- Crear archivo .module.css
+- Definir clases
+- Importar en el componente
+- Usar con className
+
+Evita conflictos de estilos.
+
+
+7. ¿Qué hace Layout.tsx?
+
+Envuelve las páginas y define una estructura común.
+Permite reutilizar elementos como headers o navegación.
+
+Usa "children" para renderizar el contenido de cada página.
+
+En resumen:
+“Es la base que comparten todas las páginas”
+
+
+8. ¿Qué es el enrutamiento?
+
+Es el sistema que permite navegar entre diferentes páginas de una aplicación web mediante URLs.
+
+
+9. Diferencia entre <Image> y <img>:
+
+<img>:
+- HTML normal
+- No optimiza imágenes
+
+<Image> (Next.js):
+- Optimiza imágenes automáticamente
+- Lazy loading
+- Mejor rendimiento
+
+
+10. ¿Qué es Lazy Load?
+
+Es una técnica donde los recursos (como imágenes) se cargan solo cuando son necesarios (cuando aparecen en pantalla).
+
+
+11. Funcionamiento del código de imágenes:
+
+Se usan dos imágenes:
+- Desktop → className="hidden md:block"
+- Mobile → className="block md:hidden"
+
+Esto significa:
+- En pantallas grandes se muestra la imagen de desktop
+- En pantallas pequeñas se muestra la de mobile
+
+
+12. ¿Cómo funciona el enrutamiento en Next.js?
+
+Se basa en la estructura de carpetas dentro de "app".
+Cada carpeta representa una ruta.
+
+
+13. ¿Qué es una ruta?
+
+Es una URL que lleva a una página específica.
+
+Ejemplo visto:
+"/dashboard"
+
+
+14. Error en localhost/dashboard:
+
+Se mostraron errores de runtime relacionados con hooks como usePathname.
+Ejemplo:
+"usePathname only works in Client Components"
+
+
+15. (Repetida)
+Mismo error explicado anteriormente.
+
+
+16. ¿Qué es File System Routing?
+
+Es el sistema donde las rutas se crean automáticamente según la estructura de carpetas.
+
+
+17. ¿Cómo funcionan las rutas anidadas?
+
+Se crean dentro de carpetas.
+
+Ejemplo:
+app/dashboard/customers/page.tsx → /dashboard/customers
+
+
+18. ¿Por qué usar export default function?
+
+Permite exportar un componente como principal para que Next.js lo reconozca como página o layout.
+
+
+19. ¿Para qué sirve Link?
+
+Permite navegar entre páginas sin recargar el navegador (navegación cliente).
+
+
+20. Diferencia entre <a> y <Link>:
+
+<a>:
+- Recarga toda la página
+
+<Link>:
+- Navegación rápida sin recarga
+- Mejor experiencia de usuario
+
+
+21. ¿Qué es un Hook?
+
+Es una función especial de React que permite usar estado o lógica dentro de componentes.
+
+
+22. ¿Qué hooks usa Midu?
+
+- usePathname
+- useState
+- useEffect
+
+
+23. ¿Por qué ocurre el error mostrado?
+
+Porque se usó usePathname en un componente de servidor.
+Solución:
+Agregar 'use client' al inicio del archivo.
+
+
+24. ¿Se pueden ejecutar componentes en cliente y servidor?
+
+Sí.
+Next.js permite:
+- Server Components
+- Client Components
+Sí, pueden ejecutarse en ambos dependiendo del tipo de componente.
+
+
+25. ¿Qué es Code Splitting?
+
+Es una técnica que divide el código en partes para cargar solo lo necesario.
+Mejora el rendimiento y reduce tiempos de carga.
